@@ -1,0 +1,53 @@
+.footer {
+    padding: 3rem;
+    background-color: #000033;
+    margin-top: 1rem;
+    color: white
+}
+
+.footerContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footerContainer > div {
+    flex: 1;
+    padding-left: 1rem;
+}
+
+.footer li {
+    list-style-type: none;
+    padding: 0.25rem
+}
+
+.footer h4 {
+    font-weight: 200;
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+}
+
+.hero {
+    display:flex;
+    font-weight: 200;
+    font-size: 1.5rem;
+  }
+
+.hero .bold {
+    display: inline-block;
+    margin-left: .5rem;
+    font-weight: 700;
+}
+
+.social li {
+    margin-right: 2rem;
+    margin-top: 1rem;
+  }
+  
+.social ul {
+    display: flex;
+    margin-left: 0px
+}
+
+.social {
+    padding-top: 1.5rem
+}

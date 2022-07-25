@@ -1,0 +1,23 @@
+.body {
+    min-height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.video {
+    flex: 1;
+    min-width: 45vw;
+    margin: 1rem;
+}
+
+.video h4 {
+    font-weight: 400;
+    font-size: 2rem;
+    margin-top: 0px
+}
+
+.video img {
+    width: 100%;
+    height: auto;
+}

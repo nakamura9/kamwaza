@@ -1,0 +1,62 @@
+.foot {
+  padding: 4px;
+  font-weight: 200;
+  color: white;
+  background-color: #444;
+}
+
+.body {
+  height: calc(100vh - 125px);
+  display: flex;
+}
+
+.overlay {
+  background: rgba(0,0,30,0.85);
+  position: absolute;
+  left: 0px;
+  top: 30vh;
+  height:50vh;
+  width: 40vw;
+  z-index: 1000;
+  color: white;
+  padding: 1rem 2rem
+}
+
+.sidebar {
+  height: 100%;
+  width: 20vw;
+  background-color: #003;
+  overflow: hidden;
+}
+
+.imgContainer {
+  background-repeat: no-repeat;
+  overflow: hidden;
+  flex: 1;
+}
+
+.imgContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.overlay a {
+  background-color: white;
+  color: #003;
+  padding: 10px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+
+.overlay li {
+  list-style-type: none;
+  margin-right: 2rem;
+  margin-top: 1rem;
+}
+
+.overlay ul {
+  display: flex;
+  margin-left: 0px
+}
+
