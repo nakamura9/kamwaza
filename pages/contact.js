@@ -3,6 +3,7 @@ import styles from '../styles/Contact.module.css'
 import NavBar from '../components/nav'
 import Footer from '../components/footer'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Link from 'next/link'
 
 export default function ContactUs() {
   return <main>
@@ -25,7 +26,7 @@ export default function ContactUs() {
             <input className={styles.input} type="text" placeholder='Name'/>
             <input className={styles.input} type="text" placeholder='email'/>
             <textarea className={styles.input} rows={4}>Your message</textarea>
-            <a className={styles.button}>Send Message</a>
+            <Link className={styles.button}>Send Message</Link>
         </div>
       </div>    
     </div>

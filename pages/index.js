@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import NavBar from '../components/nav'
 import Footer from '../components/footer'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Link from 'next/link'
 
 
 export default function Home() {
@@ -21,7 +22,7 @@ export default function Home() {
       <h1>Sample Building</h1>
       <hr />
       <p>In this location</p>
-      <a href="/portfolio">View Portfolio</a>
+      <Link href="/portfolio">View Portfolio</Link>
       <div>
         <ul>
           <li><FontAwesomeIcon icon={["fab", "instagram"]}/></li>

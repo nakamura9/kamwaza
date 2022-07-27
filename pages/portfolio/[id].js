@@ -4,6 +4,7 @@ import Footer from "../../components/footer"
 import styles from "../../styles/Portfolio.module.css"
 import { useEffect, useState } from "react"
 
+
 const Detail = props => {
     const [animated, setAnimated] = useState(false)
     const cards = [
@@ -45,7 +46,7 @@ const Detail = props => {
                 <div className={styles.control} onClick={decrement}>
                     <FontAwesomeIcon icon="angle-left" size="2x" />
                 </div>
-                {visible.map((card, idx) => <div className={idxMap[idx % 3]}>
+                {visible.map((card, idx) => <div key={idx} className={idxMap[idx % 3]}>
                         <img src={card.url} />
                         </div> 
                     )}

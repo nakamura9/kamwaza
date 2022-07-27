@@ -22,8 +22,8 @@ export default function Videos() {
   return <main>
     <NavBar />
     <div className={styles.body}>
-        {videos.map(video => (
-            <div className={styles.video}>
+        {videos.map((video, i) => (
+            <div key={i} className={styles.video}>
                 <img src={video.url}/>
                 <h4>{video.title}</h4>
             </div>

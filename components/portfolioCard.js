@@ -1,8 +1,10 @@
 import styles from '../styles/Components.module.css'
+import Link from 'next/link'
+
 
 const Card = props => {
     return (
-        <a href={props.url}>
+        <Link href={props.url}>
             <div className={styles.card}>
                 <img src={props.img_url} />
                 <div className={styles.cardOverlay}>
@@ -11,7 +13,7 @@ const Card = props => {
                     <hr />
                 </div>
             </div>
-        </a>
+        </Link>
         
     )
 }
