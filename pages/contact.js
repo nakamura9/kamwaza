@@ -26,7 +26,7 @@ export default function ContactUs() {
             <input className={styles.input} type="text" placeholder='Name'/>
             <input className={styles.input} type="text" placeholder='email'/>
             <textarea className={styles.input} rows={4}>Your message</textarea>
-            <Link className={styles.button}>Send Message</Link>
+            <Link href="/" className={styles.button}>Send Message</Link>
         </div>
       </div>    
     </div>
