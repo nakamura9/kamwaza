@@ -42,3 +42,34 @@
     font-weight: 400;
     margin-bottom: 1rem;
 }
+
+
+@media (max-width: 576px) {
+    .sidebar {
+        display: none;
+    }
+
+    .title {
+        position: static;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .body {
+        min-height: 100vh;
+    }
+
+    .floatingCard {
+        position: static;
+        background-color: transparent;
+        width: 100%;
+        height: fit-content;
+        padding: 1.5rem;
+    }
+
+    .textCard {
+        position: static;
+        width: 100%;
+        padding: 1.5rem;
+    }
+}

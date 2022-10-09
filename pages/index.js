@@ -5,9 +5,15 @@ import NavBar from '../components/nav'
 import Footer from '../components/footer'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from 'next/link'
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from 'react'
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init()
+  }, [])
+
   return <main>
     <NavBar />
     <div className={styles.body}>
@@ -19,7 +25,7 @@ export default function Home() {
       </div>
     </div>
     <div className={styles.overlay}>
-      <h1>Sample Building</h1>
+      <h1 data-aos="fade-left">Sample Building</h1>
       <hr />
       <p>In this location</p>
       <Link href="/portfolio">View Portfolio</Link>

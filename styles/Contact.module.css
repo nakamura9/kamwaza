@@ -72,3 +72,33 @@
 .form {
     margin-top: 6rem
 }
+
+.input::placeholder {
+    color: #aaa
+}
+
+@media (max-width: 576px) {
+    .title {
+        position: static;
+        padding-left: 1rem
+    }
+
+    .body {
+        display: block;
+    }
+    
+    .left, .right {
+        padding-right: 2rem
+    }
+
+    .left img {
+        width: 100%;
+    }
+
+    .textCard {
+        width: 70%;
+        left: 15%;
+        height: fit-content;
+        font-size: 1rem;
+    }
+}

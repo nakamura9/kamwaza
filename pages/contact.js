@@ -9,7 +9,7 @@ export default function ContactUs() {
   return <main>
     <NavBar />
     <div className={styles.body}>
-      
+      <h2 className={styles.title}>Contact Us</h2>
       <div className={styles.left}>
         <img src="/sample.jpeg" />
         <div className={styles.textCard}>
@@ -20,13 +20,13 @@ export default function ContactUs() {
         </div>
       </div>
       <div className={styles.right}>
-        <h2 className={styles.title}>Contact Us</h2>
+        
         <div className={styles.form}>
             <h3>Leave us a message</h3>
             <input className={styles.input} type="text" placeholder='Name'/>
-            <input className={styles.input} type="text" placeholder='email'/>
+            <input className={styles.input} type="text" placeholder='Email'/>
             <textarea className={styles.input} rows={4}>Your message</textarea>
-            <Link href="/" className={styles.button}>Send Message</Link>
+            <div className={styles.button}><Link href="/" >Send Message</Link></div>
         </div>
       </div>    
     </div>

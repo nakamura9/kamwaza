@@ -103,3 +103,13 @@
 .description {
     padding: 2rem
 }
+
+@media (max-width: 576px) {
+    .buttons {
+        flex-wrap: wrap;
+    }
+
+    .cards {
+        flex-wrap: wrap;
+    }
+}

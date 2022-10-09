@@ -60,3 +60,23 @@
   margin-left: 0px
 }
 
+@media (max-width: 576px) {
+  .body {
+    height: calc(100vh - 30px);
+    width: 100vw;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .imgContainer img {
+    height: 100%;
+    width: auto%;
+  }
+
+  .overlay {
+    width: 80vw;
+  }
+  
+}
