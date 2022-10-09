@@ -13,7 +13,7 @@ export default function About() {
         <img src="/blueprint.jpg" />
       </div>
     <div className={styles.floatingCard}>
-      <h3>This is the floating card's title</h3>
+      <h3>This is the floating card title</h3>
       <p>This is some potential content</p>
     </div>
     <div className={styles.textCard}>
