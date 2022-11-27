@@ -9,13 +9,16 @@ import { useEffect, useState } from 'react';
 export default function Videos() {
 
   const [videos, setVideos] = useState([])
-
-  const opts = {
-    height: screen.width > 720 ?  '320': 180,
-    width: screen.width > 720 ? '640' : '320',
-  };
+  const [opts, setOpts] = useState({
+    height: '320',
+    width: '640'
+  })
 
   useEffect(() => {
+    setOpts({
+      height: window.screen.width > 720 ?  '320': '180',
+      width: window.screen.width > 720 ? '640' : '320'
+    })
     fetch("/api/video/")
       .then(res => {
           res.json()
