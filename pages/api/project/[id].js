@@ -1,6 +1,5 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
 import { createClient } from "contentful"
+import { useRouter } from "next/router"
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -8,6 +7,6 @@ const client = createClient({
 })
 
 export default async function handler(req, res) {
-  const data = await client.getEntries("Project")
-  res.status(200).json({ name: 'John Doe' })
+  const data = await client.getEntry(req.query.id)
+  res.status(200).json(data )
 }

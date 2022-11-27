@@ -14,8 +14,8 @@ const NavBar = props => {
             <nav className={styles.nav}>
                 <Link href="/">
                     <div className={styles.hero}>
-                        <Image src="/sketch.png" height={40} width={40} />
-                        <div><span className={styles.bold}>Memorage</span> Architecture</div>
+                        <Image src="/logo.jpg" height={60} width={180} />
+                        
                     </div>
                 </Link>
                 <div className={styles.links} style={{left: showNav ? "0px" : "-80vw"}}>

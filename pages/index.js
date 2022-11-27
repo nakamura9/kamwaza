@@ -1,43 +1,63 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import NavBar from '../components/nav'
-import Footer from '../components/footer'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Link from 'next/link'
-import AOS from 'aos'
+
+
 import 'aos/dist/aos.css'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { Grid } from  'react-loader-spinner'
+import Featured from '../components/featured'
+
 
 export default function Home() {
+  const [current, setCurrent] = useState({})
+  const [featured, setFeatured] = useState([])
+
+  const cycleFeatured = (i) => {
+    if(!(featured.length > 0)) {
+      setTimeout(() => cycleFeatured(i), 5000)  
+      return
+    }
+    
+    const newIDX = i < featured.length - 1 ? i + 1 : 0
+    setCurrent(featured[newIDX])
+    
+    setTimeout(() => cycleFeatured(newIDX), 5000)
+  }
+
   useEffect(() => {
-    AOS.init()
+    fetch(`/api/featured/`)
+      .then(res => {
+          res.json()
+          .then(r => {
+              setFeatured(r.items)
+          })
+      })
   }, [])
+
+  useEffect(() => {
+    if(featured.length > 0) {
+      setCurrent(featured[0])
+      setTimeout(() => cycleFeatured(0), 5000)
+    }
+  }, [featured])
 
   return <main>
     <NavBar />
-    <div className={styles.body}>
-      <div className={styles.sidebar}>
-      <img src="/blueprint.jpg" />
-      </div>
-      <div className={styles.imgContainer}>
-      <img src="/sample.jpeg" />
-      </div>
-    </div>
-    <div className={styles.overlay}>
-      <h1 data-aos="fade-left">Sample Building</h1>
-      <hr />
-      <p>In this location</p>
-      <Link href="/portfolio">View Portfolio</Link>
-      <div>
-        <ul>
-          <li><FontAwesomeIcon icon={["fab", "instagram"]}/></li>
-          <li><FontAwesomeIcon icon={["fab", "facebook"]}/></li>
-          <li><FontAwesomeIcon icon={["fab", "whatsapp"]}/></li>
-          <li><FontAwesomeIcon icon={["fab", "linkedin"]}/></li>
-        </ul>
-      </div>
-    </div>
+    {current.sys == undefined 
+      ? <div className={styles.placeholder}>
+          <Grid
+              height="80"
+              width="80"
+              color="#000033"
+              ariaLabel="grid-loading"
+              radius="12.5"
+              wrapperStyle={{}}
+              wrapperClass=""
+              visible={true}
+            />
+        </div>
+          : <Featured {...current} />
+    }
     <div className={styles.foot}>
       Copyright 2022 Memorage Architecture
     </div>

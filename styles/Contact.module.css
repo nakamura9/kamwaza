@@ -49,6 +49,14 @@
     margin-bottom: 1rem;
 }
 
+.textCard li {
+    list-style-type: none;
+}
+
+.textCard p {
+    margin-left: 3rem;
+}
+
 .input {
     width: 100%;
     border: 0px;
@@ -69,8 +77,18 @@
     display: inline-block;
 }
 
+.button:hover {
+    color: white;
+    background-color: #333;
+}
+
 .form {
-    margin-top: 6rem
+    margin-top: 6rem;
+    padding: 2rem
+}
+
+.form h3 {
+    font-size: 2rem;
 }
 
 .input::placeholder {

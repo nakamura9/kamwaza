@@ -53,6 +53,23 @@
     padding-top: 1.5rem
 }
 
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery > div {
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+    margin: 8px
+}
+
+.gallery img {
+    width: auto;
+    height: 100%;
+}
+
 @media (max-width: 576px) {
     .footerContainer {
         flex-wrap: wrap;

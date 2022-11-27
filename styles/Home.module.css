@@ -72,7 +72,7 @@
 
   .imgContainer img {
     height: 100%;
-    width: auto%;
+    width: auto;
   }
 
   .overlay {
@@ -80,3 +80,11 @@
   }
   
 }
+
+.placeholder {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

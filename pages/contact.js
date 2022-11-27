@@ -13,10 +13,14 @@ export default function ContactUs() {
       <div className={styles.left}>
         <img src="/sample.jpeg" />
         <div className={styles.textCard}>
-            <h4>Some Text</h4>
-            <p>Thanks for visiting our site.</p>
-            <h4>Other Text</h4>
-            <p>We would like to hear from you.</p>
+            <h4><FontAwesomeIcon icon={["fas", "book-open"]}/> Contacts</h4>
+            <ul>
+                <li><FontAwesomeIcon icon={["fas", "phone"]}/> +263 772 778 566</li>
+                <li><FontAwesomeIcon icon={["fas", "mobile"]}/> +263 772 778 566</li>
+                <li><FontAwesomeIcon icon={["fas", "at"]}/> memoragearchitecture@gmail.com</li>
+            </ul>
+            <h4><FontAwesomeIcon icon={["fas", "location"]}/> Address</h4>
+            <p>1826 Area D <br /> Bluffhill <br />  Harare <br /> Zimbabwe</p>
         </div>
       </div>
       <div className={styles.right}>

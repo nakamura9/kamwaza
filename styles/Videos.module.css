@@ -2,22 +2,32 @@
     min-height: 50vh;
     display: flex;
     flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 2rem auto
 }
 
 
 .video {
     flex: 1;
-    min-width: 45vw;
     margin: 1rem;
+    width: fit-content;
 }
 
 .video h4 {
     font-weight: 400;
     font-size: 2rem;
-    margin-top: 0px
+    margin-top: 0px;
+    margin-bottom: 12px
 }
 
 .video img {
     width: 100%;
     height: auto;
+}
+
+@media (max-width: 576px) {
+    .video {
+        width: 100vw;
+    }
+
 }

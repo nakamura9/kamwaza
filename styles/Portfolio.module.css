@@ -24,15 +24,17 @@
     background-color: #eee;
 }
 
-.buttons li:hover {
+.buttons li:hover,
+.activeCategory {
     border-bottom: 2px solid  #eee;
-    background-color:  #003;
+    background-color:  #003 !important;
     color: white
 }
 
 .cards {
     display: flex;
     margin: 1rem;
+    flex-wrap: wrap;
 }
 
 
@@ -61,47 +63,129 @@
     position: relative;
 }
 
-.leftCard, .rightCard, .centerCard {
+.card
+{
     position: absolute;
     background-color: white;
     box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
     overflow: hidden;
     transition: all 1s ease; 
+    left: 100vw;
+    top: 12.5vh;
+    height: 25vh;
+    width: 25vh;
+    opacity: 0.1;
 }
 
-.leftCard img, .rightCard img, .centerCard img {
+.card img {
     width: 100%;
     height: auto
 }
 
-.leftCard {
+.after {
     top: 12.5vh;
     width: 25vh;
     height: 25vh;
-    right: 70vw;
+    left: 15vw;
+    opacity: 1;
+    z-index: 100;
 }
 
-.rightCard {
+.before {
     top: 12.5vh;
     height: 25vh;
     width: 25vh;
-    left: 70vw;
+    left: 75vw;
+    opacity: 1;
+    z-index: 200;
 }
 
-.centerCard {
+.current {
     height: 100%;
     width: 50vw;
     left: 25vw;
     z-index: 500;
+    top: 0vh;
+    opacity: 1;
 }
 
 .description h4 {
     font-weight: 400;
     font-size: 2rem;
+    margin-bottom: 1rem;
+    margin-top:1.5rem
 }
 
 .description {
     padding: 2rem
+}
+
+.description b {
+    display: inline-block;
+    width: 5rem
+}
+
+.prose {
+    background-color: #eee;
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border-left: 12px solid #000033
+}
+
+.projectText {
+    display: flex;
+    justify-content: center;
+}
+
+.projectText > div {
+    min-width: 300px;
+}
+
+.comment {
+    background-color: #eee;
+    margin: 3rem auto;
+    max-width: 900px;
+    padding: 2rem;
+}
+
+.inputs {
+    display: flex
+}
+
+.comment h2 {
+    font-weight: 300;
+    font-size: 3rem;
+    margin-top:0
+}
+
+.comment input {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 1.25rem;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1.5rem;
+    margin-right: 0.5rem;
+    flex: 1
+}
+
+.comment textarea {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 1.25rem;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+
+.comment button {
+    background-color: #000033;
+    margin: 1.5rem;
+    padding: 1rem;
+    font-size: 1.25rem;
+    color: white;
+    font-family: sans-serif;
 }
 
 @media (max-width: 576px) {
@@ -112,4 +196,49 @@
     .cards {
         flex-wrap: wrap;
     }
+
+    .control {
+        left: 0px
+    }
+
+    .controlRight {
+        left: calc(100vw - 60px) !important;
+    }
+
+    .card {
+        top: 0px;
+        height: 100%;
+        width: 100vw;
+    }
+
+    .carousel {
+        overflow: hidden;
+    }
+
+    .current {
+        left: 0px
+    }
+
+    .before {
+        left: 100vw
+    }
+
+    .after {
+        left: -100vw
+    }
+
+    .projectText {
+        flex-wrap: wrap;
+    }
+
+    .inputs {
+        flex-wrap: wrap;
+    }
+}
+
+.placeholder {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
