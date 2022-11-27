@@ -44,7 +44,7 @@ export default function About() {
         Be Visible, Distinct And Memorable.</p>
         
         <p>We At Memorage Architecture Strive To Capture Those Dreams, Visions And Memories In The
-        Built Form. We Specialise In Custom Made Architectural Gems That Will Forever "Freeze" In
+        Built Form. We Specialise In Custom Made Architectural Gems That Will Forever &quot;Freeze&quot; In
         Your Memory. Our Innovative Minds Are At Your Disposal To Capture What We Believe Is</p>
     </div>
     </div>
