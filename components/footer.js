@@ -49,7 +49,7 @@ const Footer = props => {
                         <li><span>Email: </span>memoragearchitecture@gmail.com</li>
                     </ul>
                     <h4>Address</h4>
-                    <p style={{marginLeft: "3rem"}}>1826 Area D <br /> Bluffhill <br />  Harare <br /> Zimbabwe</p>
+                    <p style={{marginLeft: "3rem"}}>1826 Meadow Lane <br /> Area D<br />New Bluffhill <br />  Harare</p>
                 </div>
                 <div>
                     <h4>Work</h4>

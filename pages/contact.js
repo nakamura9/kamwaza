@@ -20,7 +20,7 @@ export default function ContactUs() {
                 <li><FontAwesomeIcon icon={["fas", "at"]}/> memoragearchitecture@gmail.com</li>
             </ul>
             <h4><FontAwesomeIcon icon={["fas", "location"]}/> Address</h4>
-            <p>1826 Area D <br /> Bluffhill <br />  Harare <br /> Zimbabwe</p>
+            <p>1826 Meadow Lane <br /> Area D<br />New Bluffhill <br />  Harare</p>
         </div>
       </div>
       <div className={styles.right}>
