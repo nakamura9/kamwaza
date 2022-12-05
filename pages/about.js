@@ -3,16 +3,35 @@ import styles from '../styles/About.module.css'
 import NavBar from '../components/nav'
 import Footer from '../components/footer'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Head from 'next/head'
+import {motion} from 'framer-motion'
+
 
 export default function About() {
-  return <main>
+  return <>
+    <Head>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet" />
+    </Head>
+    <main>
     <NavBar />
     <div className={styles.body}>
-      <h2 className={styles.title}>About</h2>
+      <motion.h2 
+        className={styles.title}
+        initial={{opacity: 0}}
+        animate={{opacity: 0.15}}
+        transition={{duration: 1}}
+      >About</motion.h2>
       <div className={styles.sidebar}>
         <img src="/blueprint.jpg" />
       </div>
-    <div className={styles.floatingCard}>
+    <motion.div 
+      initial={{left: '-100vw'}}
+      animate={{left: '10vw'}}
+      transition={{duration: 1.5}}
+      className={styles.floatingCard}
+    >
       <h3>The Team</h3>
       <p><b>Mordecai Kamwaza</b> is a professional architect who has been practicing architecture in the
       Zimbabwean built environment for the past fifteen (15) years. He is the principal architect
@@ -33,7 +52,7 @@ export default function About() {
         Zimbabwe. He two years experience. He is a hands on project coordinator and specialises in
         custom made interior and exterior designs
       </p>
-    </div>
+    </motion.div>
     <div className={styles.textCard}>
         <h4>Principal&apos;s Statement</h4>
         <p> In This Ever Changing Global Sphere, Change And Development Characterize The Mainstay Of
@@ -45,9 +64,13 @@ export default function About() {
         
         <p>We At Memorage Architecture Strive To Capture Those Dreams, Visions And Memories In The
         Built Form. We Specialise In Custom Made Architectural Gems That Will Forever &quot;Freeze&quot; In
-        Your Memory. Our Innovative Minds Are At Your Disposal To Capture What We Believe Is</p>
+        Your Memory. Our Innovative Minds Are At Your Disposal To Capture What We Believe Is...
+        <span>&quot;Creating Memoirs&quot;</span>
+        </p>
+        
     </div>
     </div>
     <Footer />
   </main>
+  </>
 }

@@ -1,13 +1,27 @@
 import styles from '../styles/Navbar.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Image from 'next/image'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Link from 'next/link'
+import {motion} from "framer-motion"
 
 const NavBar = props => {
     const [search, toggleSearch] = useState(false)
     const [searchText, setSearchText] = useState("")
     const [showNav, toggleNav] = useState(false)
+    const [searchResults, setSEarchResults] = useState([])
+    
+    useEffect(() => {
+        if(searchText < 3) return 
+        fetch(`/api/search/${searchText}`)
+            .then(res => {
+                res.json()
+                    .then(r => {
+                        console.log(r.items)
+                        setSEarchResults(r.items)
+                    })
+            })
+    }, [searchText])
 
     return (
         <>
@@ -49,16 +63,44 @@ const NavBar = props => {
                     />
                 </div>
             </nav>
-            <div className={styles.searchBox} style={{display: search ? 'flex': 'none'}}>
-                <div>
-                    <input type="text"/>
-                    <FontAwesomeIcon 
-                        icon="search" 
-                        size='2x'
-                        onClick={() => toggleSearch(!search)}
-                    />
+            <motion.div 
+                className={styles.searchBox} 
+                style={{display: search ? 'block': 'none'}}
+                key={search}
+                initial={{backgroundColor: "rgba(0,0,0,0)"}}
+                animate={{backgroundColor: "rgba(0,0,0,0.7)"}}
+
+            >
+                
+                <div className={styles.searchResults}>
+                    <div className={styles.searchInputs}>
+                        <input 
+                            type="text"
+                            value={searchText}
+                            onInput={evt => setSearchText(evt.target.value) } />
+                        <FontAwesomeIcon 
+                            icon="search" 
+                            size='2x'
+                            onClick={() => toggleSearch(!search)}
+                        />
+                    </div>
+                    {searchResults.map(r => (
+                        <div 
+                            key={r.sys.id} 
+                            className={styles.searchResult}
+                        >
+                            <img src={r.fields.coverPicture.fields.file.url} />
+                            <div>
+                                <Link href={`/project/${r.sys.id}/`}><h2>{r.fields.title}</h2></Link>
+                                <hr />
+                                <p>{r.fields.project}, {r.fields.location}, {r.fields.year}</p>
+                            </div>
+                        </div>
+                        )
+                    )}
                 </div>
-            </div>
+            </motion.div>
+            
         </>
         
     )

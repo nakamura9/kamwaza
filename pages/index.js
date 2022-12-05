@@ -8,6 +8,7 @@ import { Grid } from  'react-loader-spinner'
 import Featured from '../components/featured'
 
 
+
 export default function Home() {
   const [current, setCurrent] = useState({})
   const [featured, setFeatured] = useState([])
@@ -20,6 +21,7 @@ export default function Home() {
     
     const newIDX = i < featured.length - 1 ? i + 1 : 0
     setCurrent(featured[newIDX])
+    
     
     setTimeout(() => cycleFeatured(newIDX), 5000)
   }

@@ -119,17 +119,34 @@ const Detail = props => {
             }
 
             <div className={styles.comment} >
-                <h2>Leave A Reply</h2>
-                <br />
-                <div className={styles.inputs}>
-                    <input type="text" placeholder="Name"/>
-                    <input type="text" placeholder="Email"/>
-                </div>
-                <br />
-                <textarea defaultValue="Your comment" rows={4}>
-                </textarea>
-                <br />
-                <button>Post Comment</button>
+                <form action="https://formspree.io/f/xqkjrknw" method="post">
+                    <h2>Leave A Reply</h2>
+                    <br />
+                    <div className={styles.inputs}>
+                        <input 
+                            type="text" 
+                            placeholder="Name"
+                            id="name"
+                            name="name"
+                        />
+                        <input 
+                            type="email" 
+                            placeholder="Email"
+                            id="email"
+                            name="email"
+                        />
+                    </div>
+                    <br />
+                    <textarea 
+                        defaultValue="Your comment" 
+                        rows={4}
+                        id="comment"
+                        name="comment"
+                    >
+                    </textarea>
+                    <br />
+                    <button type="submit">Post Comment</button>
+                </form>
             </div>
 
             <Footer />

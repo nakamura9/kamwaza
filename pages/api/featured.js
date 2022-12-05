@@ -1,5 +1,4 @@
 import { createClient } from "contentful"
-import { useRouter } from "next/router"
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,

@@ -4,12 +4,15 @@ import styles from '../styles/Portfolio.module.css'
 import Card from '../components/portfolioCard'
 import { useEffect, useState } from "react"
 import Link from 'next/link'
+import {motion} from 'framer-motion'
 
 
 const Portfolio = props => {
     const [categories, setCategories] = useState([])
     const [category, setCategory] = useState(null)
     const [projects, setProjects] = useState([])
+    
+
     useEffect(() => {
         fetch("/api/category/")
             .then(res => {
@@ -50,7 +53,12 @@ const Portfolio = props => {
     return (
         <main>
             <NavBar />
-            <h1 className={styles.heading}>Our Work</h1>
+            <motion.h1 
+                initial={{opacity: 0}}
+                animate={{opacity: 0.15}}
+                transition={{duration: 1}}
+                className={styles.heading}
+            >Our Work</motion.h1>
             <ul className={styles.buttons}>
             <li className={category == null ? styles.activeCategory: ""} onClick={() => setCategory(null)}>All</li>
                 {categories.map(c => (
